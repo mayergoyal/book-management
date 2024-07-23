@@ -1,0 +1,84 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "name": "Vaan",
+      "author": "Mayer",
+      "genre": "Fanatsy",
+      "price": "50.0",
+      "publisher": "Anant-Radhika"
+    },
+    {
+      "id": "2",
+      "name": "Mystic River",
+      "author": "Dennis Lehane",
+      "genre": "Mystery",
+      "price": "35.0",
+      "publisher": "HarperCollins"
+    },
+    {
+      "id": "3",
+      "name": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "genre": "Classic",
+      "price": "45.0",
+      "publisher": "Scribner"
+    },
+    {
+      "id": "4",
+      "name": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "genre": "Historical Fiction",
+      "price": "40.0",
+      "publisher": "J.B. Lippincott & Co."
+    },
+    {
+      "id": "5",
+      "name": "1984",
+      "author": "George Orwell",
+      "genre": "Dystopian",
+      "price": "30.0",
+      "publisher": "Secker & Warburg"
+    },
+    {
+      "id": "6",
+      "name": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "genre": "Literary Fiction",
+      "price": "25.0",
+      "publisher": "Little, Brown and Company"
+    },
+    {
+      "id": "7",
+      "name": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasy",
+      "price": "55.0",
+      "publisher": "George Allen & Unwin"
+    },
+    {
+      "id": "8",
+      "name": "Brave New World",
+      "author": "Aldous Huxley",
+      "genre": "Science Fiction",
+      "price": "28.0",
+      "publisher": "Chatto & Windus"
+    },
+    {
+      "id": "9",
+      "name": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "genre": "Romance",
+      "price": "33.0",
+      "publisher": "T. Egerton"
+    },
+    {
+      "id": "10",
+      "name": "The Da Vinci Code",
+      "author": "Dan Brown",
+      "genre": "Thriller",
+      "price": "38.0",
+      "publisher": "Doubleday"
+    }
+  ]
+}
