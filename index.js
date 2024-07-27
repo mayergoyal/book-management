@@ -5,7 +5,10 @@ const app = express();
 const PORT = 8081;
 const userRouter = require("./roots/users");
 const bookRouter = require("./roots/books");
-
+const dotenv = require("dotenv");
+dotenv.config();
+const dbConnection = require("./databaseConnection");
+dbConnection();
 app.use(express.json()); //using in json  format
 app.get("/", (req, res) => {
   res.status(200).json({ message: "server is running " });

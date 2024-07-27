@@ -2,6 +2,14 @@ const express = require("express");
 const { books } = require("../data/books.json");
 const { users } = require("../data/users.json");
 const router = express.Router();
+const { userModel, bookModel } = require("../models/index");
+const {
+  getAllBooks,
+  getSingleBookById,
+  getAllIssuedBooks,
+  addnewbook,
+  updatebook,
+} = require("../controllers/book_controller");
 //        BOOKS   **********************************
 
 /**
@@ -11,19 +19,22 @@ const router = express.Router();
  * access:public
  * parameters:none
  */
+/*
 router.get("/", (req, res) => {
   res.status(200).json({
     success: true,
     data: books,
   });
-});
+});*/
+router.get("/", getAllBooks);
 /**
  * route:/books
  * method:post
- * description:crate new books
+ * description:crate new book
  * access:public
  * parameters:none
  */
+/*
 router.post("/", (req, res) => {
   const { id, name, author, genre, price, publisher } = req.body;
   const book = books.find((each) => each.id === id);
@@ -46,7 +57,8 @@ router.post("/", (req, res) => {
     message: "added successfully",
     data: books,
   });
-});
+});*/
+router.post("/", addnewbook);
 /**
  * route:/books/issued
  * method:get
@@ -54,6 +66,9 @@ router.post("/", (req, res) => {
  * access:public
  * parameters:none
  */
+router.get("/:id", getSingleBookById);
+router.get("/issued", getAllIssuedBooks);
+/*
 router.get("/issued", (req, res) => {
   const userwithissuedbook = users.filter((each) => {
     if (each.issuedBook) {
@@ -77,7 +92,7 @@ router.get("/issued", (req, res) => {
   return res.status(200).json({
     data: issuedBooks,
   });
-});
+});*/
 /**
  * route:/books/:id
  * method:get
@@ -85,7 +100,7 @@ router.get("/issued", (req, res) => {
  * access:public
  * parameters:id
  */
-
+/*
 router.get("/:id", (req, res) => {
   const { id } = req.params; //params means perimeter so req means that url so url m jo parameter pass krenge mtlb id , that will be stored in that literal
   const book = books.find((each) => each.id === id);
@@ -100,7 +115,7 @@ router.get("/:id", (req, res) => {
     message: "book found",
     data: book,
   });
-});
+});*/
 /**
  * route:/books/:id
  * method:put
@@ -108,6 +123,8 @@ router.get("/:id", (req, res) => {
  * access:public
  * parameters:id
  */
+router.put("/:id", updatebook);
+/*
 router.put("/:id", (req, res) => {
   const { id } = req.params;
   const { data } = req.body;
@@ -129,6 +146,6 @@ router.put("/:id", (req, res) => {
     success: false,
     message: "not found ",
   });
-});
+});*/
 
 module.exports = router;

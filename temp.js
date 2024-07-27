@@ -55,3 +55,44 @@ get : get all issued books
 get: get all issued books with their fines
 
 */
+
+// mongodb
+/*
+>>M: Model (bundle view and controller , depicts the structure of mongodb)
+>>V: View (with respect to front end)
+>> C : Controllers (brain or logical part of a router)
+     >>books.controllers.js
+     >>users.controllers.js
+
+
+Schema >> 
+id:String 
+name:String 
+age: Number
+
+Model>> 
+id: 
+name: 
+age: 
+{no data -type restriction as such }
+*/
+
+/**
+  data transfer object 
+  var obj1:{
+      name 
+      age
+      id
+      gender
+  }
+      ||
+      ||
+      ||
+      ||
+  var obj2:{
+         name 
+         age
+         id
+  }
+         so dto is transfering information one object to another object
+ */

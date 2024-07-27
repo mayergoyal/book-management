@@ -1,5 +1,12 @@
 const express = require("express");
 const { users } = require("../data/users.json");
+const {
+  getAllUsers,
+  addnewuser,
+  getNewUserById,
+  updateuser,
+  deleteuser,
+} = require("../controllers/user_controller");
 const router = express.Router();
 /**
  * route:/users
@@ -8,12 +15,14 @@ const router = express.Router();
  * access:public
  * parameters:none
  */
+router.get("/", getAllUsers);
+/*
 router.get("/", (req, res) => {
   res.status(200).json({
     success: true,
     data: users,
   });
-});
+});*/
 /**
  * route:/users
  * method:post
@@ -21,6 +30,8 @@ router.get("/", (req, res) => {
  * access:public
  * parameters:none
  */
+router.post("/", addnewuser);
+/*
 router.post("/", (req, res) => {
   const { id, name, surname, email, subscriptionType, subscriptionDate } =
     req.body;
@@ -45,6 +56,7 @@ router.post("/", (req, res) => {
     data: users,
   });
 });
+*/
 /**
  * route:/users/:id
  * method:get
@@ -52,7 +64,8 @@ router.post("/", (req, res) => {
  * access:public
  * parameters:id
  */
-
+router.get("/:id", getNewUserById);
+/*
 router.get("/:id", (req, res) => {
   const { id } = req.params; //params means perimeter so req means that url so url m jo parameter pass krenge mtlb id , that will be stored in that literal
   const user = users.find((each) => each.id === id);
@@ -67,7 +80,7 @@ router.get("/:id", (req, res) => {
     message: "user found",
     data: user,
   });
-});
+});*/
 /**
  * route:/users/:id
  * method:put
@@ -75,6 +88,8 @@ router.get("/:id", (req, res) => {
  * access:public
  * parameters:id
  */
+router.put("/:id", updateuser);
+/*
 router.put("/:id", (req, res) => {
   const { id } = req.params;
   const { data } = req.body;
@@ -99,7 +114,7 @@ router.put("/:id", (req, res) => {
     message: "updated successfully",
     data: updateuserdata,
   });
-});
+});*/
 /**
  * route:/users/:id
  * method:delete
@@ -107,6 +122,8 @@ router.put("/:id", (req, res) => {
  * access:public
  * parameters:id
  */
+router.delete("/:id", deleteuser);
+/*
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
   console.log(`received id is ${id}`);
@@ -124,7 +141,7 @@ router.delete("/:id", (req, res) => {
     message: "deleted the user",
     data: users,
   });
-});
+});*/
 
 /**
  * /users/subscription-details/:id
